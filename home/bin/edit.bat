@@ -1,0 +1,1 @@
+call C:\home\program\tednotepad\TedNpad.exe $1
