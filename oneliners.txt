@@ -1,0 +1,2 @@
+grep -rnw 'src' -e "logo"
+
