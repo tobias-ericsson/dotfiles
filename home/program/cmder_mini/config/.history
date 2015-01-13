@@ -1,0 +1,31 @@
+ls
+cd 
+ls
+git
+cd dev
+cd 
+cd ..
+cd dev
+cd dotfiles\
+find
+cd vagrant\
+vagrant up
+vagrant ssh
+xdfsgh
+test
+cd tobias-ericsson.github.io\
+ls
+npm start
+.\noteslist.sh 
+git log -1 --format=%cd filename.txt
+git log -1 --format=%cd index.html
+git log -1 --format=%ci index.html
+npm start
+cd .git
+ls
+cd hooks
+la
+cd ..
+ls
+touch test.sh
+cd .git
