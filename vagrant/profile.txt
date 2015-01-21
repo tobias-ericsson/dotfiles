@@ -22,8 +22,8 @@ if [ -d "$HOME/bin" ] ; then
 fi
 
 # set PATH so it includes spring-boot if it exists
-SPRING_HOME="bubbla"
-
-if [ -d "$SPRING_HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
+#SPRING_HOME="bubbla"
+#
+#if [ -d "$SPRING_HOME/bin" ] ; then
+#    PATH="$HOME/bin:$PATH"
+#fi
