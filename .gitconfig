@@ -1,0 +1,7 @@
+[color]
+	ui = true
+[push]
+	default = simple
+[user]
+	email = tobias.ericsson@mobenga.com
+	name = Tobias Ericsson
