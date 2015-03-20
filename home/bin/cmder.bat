@@ -1,1 +1,0 @@
-start d:\dev\dotfiles\home\program\cmder_mini\cmder.exe &
