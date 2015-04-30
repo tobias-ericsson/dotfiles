@@ -1,7 +1,7 @@
-source /home/tobias/dev/antigen/antigen.zsh
+#source /home/tobias/dev/antigen/antigen.zsh
 
 # Load the oh-my-zsh's library.
-antigen use oh-my-zsh
+#antigen use oh-my-zsh
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 #antigen bundle git
@@ -11,13 +11,13 @@ antigen use oh-my-zsh
 #antigen bundle command-not-found
 
 # Syntax highlighting bundle.
-antigen bundle zsh-users/zsh-syntax-highlighting
+#antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Load the theme.
-antigen theme robbyrussell
+#antigen theme robbyrussell
 
 # Tell antigen that you're done.
-antigen apply
+#antigen apply
 
 # ----------------------------------------------
 
@@ -87,7 +87,7 @@ PS1="$PS1\${vcs_info_msg_0_}$ "
 clear
 
 #say hello
-fortune
+#fortune
 #echo "Hej!"
 
 
