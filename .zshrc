@@ -1,95 +1,31 @@
-source /home/tobias/dev/antigen/antigen.zsh
+# load zgen
+source "${HOME}/dev/zgen/zgen.zsh"
 
-# Load the oh-my-zsh's library.
-antigen use oh-my-zsh
+# check if there's no init script
+if ! zgen saved; then
+    echo "Creating a zgen save"
 
-# Bundles from the default repo (robbyrussell's oh-my-zsh).
-#antigen bundle git
-#antigen bundle heroku
-#antigen bundle pip
-#antigen bundle lein
-#antigen bundle command-not-found
+    zgen oh-my-zsh
 
-# Syntax highlighting bundle.
-antigen bundle zsh-users/zsh-syntax-highlighting
+    # plugins
+    zgen oh-my-zsh plugins/git
+    zgen oh-my-zsh plugins/sudo
+    zgen oh-my-zsh plugins/command-not-found
+    zgen load zsh-users/zsh-syntax-highlighting
+    #zgen load /path/to/super-secret-private-plugin
 
-# Load the theme.
-antigen theme robbyrussell
+    # completions
+    zgen load zsh-users/zsh-completions src
 
-# Tell antigen that you're done.
-antigen apply
+    # theme
+    zgen oh-my-zsh themes/arrow
 
-# ----------------------------------------------
-
-
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
+    # save all to init script
+    zgen save
 fi
 
-# colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-
-# get tab completion from ssh/config 
-#complete -W "$(<~/.ssh/config)" ssh
-
-
-#PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ;}'echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
-
-# aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
+# alias
 alias chrome='google-chrome'
 
-
+# autojump with j
 [[ -s /home/tobias/.autojump/etc/profile.d/autojump.sh ]] && source /home/tobias/.autojump/etc/profile.d/autojump.sh
-
-# PROMT
-
-autoload -U colors && colors
-PS1="%{$fg[red]%}-%{$reset_color%}%{$fg[blue]%}%m %{$fg[yellow]%}%~ %{$reset_color%}% "
-
-#PROMPT='%m %~ '
-
-autoload -Uz vcs_info
-	
-zstyle ':vcs_info:*' enable git svn
-zstyle ':vcs_info:*' formats '[%b]'
-
-precmd () { vcs_info }
-setopt prompt_subst
-PS1="$PS1\${vcs_info_msg_0_}$ "
-
-
-#local knownhosts
-#knownhosts=( ${${${${(f)"$(<$HOME/.ssh/known_hosts)"}:#[0-9]*}%%\ *}%##%,*} )
-#zstyle ':completion:*:(ssh|scp|sftp):*' hosts $knownhosts
-
-#zstyle -s ':completion:*:hosts' hosts _ssh_config
-#[[ -r ~/.ssh/config ]] && _ssh_config+=($(cat ~/.ssh/config | sed -ne #'s/Host[=\t ]//p'))
-#zstyle ':completion:*:hosts' hosts $_ssh_config
-
-
-#clear screen
-clear
-
-#say hello
-fortune
-#echo "Hej!"
-
-
-
-
