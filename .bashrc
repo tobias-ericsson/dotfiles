@@ -148,7 +148,7 @@ clear
 
 alias chrome='google-chrome'
 
-
+#from git://github.com/joelthelion/autojump.git
 [[ -s /home/tobias/.autojump/etc/profile.d/autojump.sh ]] && source /home/tobias/.autojump/etc/profile.d/autojump.sh
 
 
