@@ -12,7 +12,7 @@
   apt_repository: repo='ppa:cwchien/gradle'
 
 - name: Add Node.js Repository
-  apt_repository: repo='ppa:chris-lea/node.js'
+  shell: curl --silent --location https://deb.nodesource.com/setup_0.12 | sudo bash -
 
 - name: Accept Java 8 Licence
   shell: echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | tee /etc/oracle-java-8-licence-acceptance | /usr/bin/debconf-set-selections
@@ -20,7 +20,7 @@
     creates: /etc/oracle-java-8-licence-acceptance
 
 - name: Install Oracle Java 8
-  apt: name={{item}} state=latestj
+  apt: name={{item}} state=latest
   with_items:
     - oracle-java8-installer
     - ca-certificates
@@ -29,7 +29,6 @@
 # Only run "update_cache=yes" if the last one is more than 3600 seconds ago
 - apt: update_cache=yes cache_valid_time=3600
 
-# Install the package "foo"
 - apt: name=mousepad state=present
 
 - name: install dev
@@ -37,22 +36,23 @@
   with_items:
     - maven
     - gradle
+    - nodejs
     
-- name: install with apt
+- name: install db
+  apt: name={{item}} state=present
+  with_items:
+    - elasticsearch
+    - redis-server
+    - mongodb-server
+
+- name: install util
   apt: name={{item}} state=present
   with_items:
     # better shell
     - zsh
     # terminal multiplexer
     - tmux
-    # terminal editor
     - vim-gtk
-    # shh
-    - ssh
-    # stuff
-    - elasticsearch
-    - redis-server
-    - mongodb-server
 
 # This is an example of how to gather information from the machine. We
 # run a command with the "shell" module and register the result into the

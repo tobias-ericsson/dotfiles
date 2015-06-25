@@ -9,9 +9,6 @@
 - git: repo=git@github.com:tobias-ericsson/tobias-ericsson.github.io.git 
        dest={{ dev_root }}/tobias-ericsson.github.io.git
 
-- git: repo=git@github.com:tobias-ericsson/dotfiles.git 
-       dest={{ dev_root }}/dotfiles.git
-
 - git: repo=git@github.com:tarjoilija/zgen.git
        dest={{ dev_root }}/zgen
 
