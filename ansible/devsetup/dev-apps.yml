@@ -16,4 +16,4 @@
 
   # roles are a way to group tasks; they will run in the sequence determined here
   roles:
-    - system
+    - dev-apps

@@ -38,13 +38,6 @@
     - gradle
     - nodejs
     
-- name: install db
-  apt: name={{item}} state=present
-  with_items:
-    - elasticsearch
-    - redis-server
-    - mongodb-server
-
 - name: install util
   apt: name={{item}} state=present
   with_items:
