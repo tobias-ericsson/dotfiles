@@ -1,0 +1,61 @@
+---
+- name: Install add-apt-repostory
+  apt: name=software-properties-common state=latest
+
+- name: Add Oracle Java Repository
+  apt_repository: repo='ppa:webupd8team/java'
+
+- name: Accept Java 8 Licence
+  shell: echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | tee /etc/oracle-java-8-licence-acceptance | /usr/bin/debconf-set-selections
+  args:
+    creates: /etc/oracle-java-8-licence-acceptance
+
+- name: Install Oracle Java 8
+  apt: name={{item}} state=latest
+  with_items:
+    - oracle-java8-installer
+    - ca-certificates
+    - oracle-java8-set-default
+
+# Only run "update_cache=yes" if the last one is more than 3600 seconds ago
+- apt: update_cache=yes cache_valid_time=3600
+
+# Install the package "foo"
+- apt: name=mousepad state=present
+
+
+- name: install with apt
+  apt: name={{item}} state=present
+  with_items:
+    # better shell
+    - zsh
+    # terminal multiplexer
+    - tmux
+    # terminal editor
+    - vim-gtk
+    # shh
+    - ssh
+    # stuff
+    - elasticsearch
+    - redis-server
+    - mongodb-server
+
+# This is an example of how to gather information from the machine. We
+# run a command with the "shell" module and register the result into the
+# "default_shell" variable
+- name: zsh facts
+  shell: 'echo $SHELL'
+  register: default_shell
+  # changed when determines when will this task be considered changed when running
+  # ansible. In this case, we want it to always be false, as we are just
+  # retrieving information.
+  changed_when: False
+  sudo: no
+
+# Now, we want to set zsh as the default shell, unless it is already the default
+# one.
+- name: make zsh default
+  shell:  chsh -s /bin/zsh 
+  # This task will run only when the following is true. In here, we check the
+  # value registered previously within the "default_shell" variable.
+  when: default_shell.stdout.find('/bin/zsh') == -1
