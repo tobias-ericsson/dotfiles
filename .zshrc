@@ -26,6 +26,7 @@ fi
 
 # alias
 alias chrome='google-chrome'
+alias cheat=tldr
 
 # autojump with j
 [[ -s /home/tobias/.autojump/etc/profile.d/autojump.sh ]] && source /home/tobias/.autojump/etc/profile.d/autojump.sh
