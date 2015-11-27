@@ -119,11 +119,12 @@ fi
 # get tab completion from ssh/config
 complete -W "$(<~/.ssh/config)" ssh
 
-
-# Displaying git branch inside prompt
- function parse_git_branch {
-   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
- }
+function parse_git_dirty {
+  [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
+}
+function parse_git_branch {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/(\1$(parse_git_dirty))/"
+}
 
 function proml {
  PS1="\[$(tput sgr0)\]\[\033[38;5;136m\]\H\[$(tput sgr0)\]\[\033[38;5;15m\] [\[$(tput sgr0)\]\[\033[38;5;136m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\]]\[$(tput sgr0)\]\[\033[0;32m\]\$(parse_git_branch)\[$(tput sgr0)\]\\$ "
