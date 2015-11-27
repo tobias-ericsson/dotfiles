@@ -1,6 +1,9 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
+# ~/.bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
 
 # If not running interactively, don't do anything
 case $- in
@@ -8,8 +11,28 @@ case $- in
       *) return;;
 esac
 
+#### MOBENGA START
+if test -d /opt/mobenga/bin ; then
+	export PATH=/opt/mobenga/bin:$PATH
+fi
+
+if test -d /opt/mobenga/lib ; then
+	if test -n "$LD_LIBRARY_PATH" ; then
+		export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/mobenga/lib
+	else
+		export LD_LIBRARY_PATH=/opt/mobenga/lib
+	fi
+fi
+
+monit () {
+	sudo /opt/mobenga/bin/monit -c /opt/mobenga/etc/monit.conf $@
+}
+
+alias mob='cd /opt/mobenga/apps/'
+
+#### MOBENGA END
+
 # don't put duplicate lines or lines starting with space in the history.
-# See bash(1) for more options
 HISTCONTROL=ignoreboth
 
 # append to the history file, don't overwrite it
@@ -72,37 +95,14 @@ xterm*|rxvt*)
     ;;
 esac
 
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
 
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
 
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
 # Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+if [ -f ~/.aliasrc ]; then
+    . ~/.aliasrc
 fi
 
 # enable programmable completion features (you don't need to enable
@@ -116,12 +116,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-
-#load settings from .dotfiles
-# source ~/.dotfiles/bash_prompt.sh
-#source ~/.dotfiles/alias.sh
-
-# get tab completion from ssh/config 
+# get tab completion from ssh/config
 complete -W "$(<~/.ssh/config)" ssh
 
 
@@ -142,18 +137,15 @@ proml
 
 
 #clear screen
-clear
+#clear
 
 #PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ;}'echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
 
-alias chrome='google-chrome'
-
-#from git://github.com/joelthelion/autojump.git
-[[ -s /home/tobias/.autojump/etc/profile.d/autojump.sh ]] && source /home/tobias/.autojump/etc/profile.d/autojump.sh
-
+# autojump with j
+[[ -s ${HOME}/.autojump/etc/profile.d/autojump.sh ]] && source ${HOME}/.autojump/etc/profile.d/autojump.sh
 
 #say hello
-echo "Hej!"
+#echo "Hej!"
 
 
 
