@@ -126,7 +126,7 @@ complete -W "$(<~/.ssh/config)" ssh
  }
 
 function proml {
- PS1="\[$(tput sgr0)\]\[\033[38;5;136m\]\H\[$(tput sgr0)\]\[\033[38;5;15m\] [\[$(tput sgr0)\]\[\033[38;5;136m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\]]\\$\[$(tput sgr0)\]\[\033[0;32m\]\$(parse_git_branch)\[$(tput sgr0)\] "
+ PS1="\[$(tput sgr0)\]\[\033[38;5;136m\]\H\[$(tput sgr0)\]\[\033[38;5;15m\] [\[$(tput sgr0)\]\[\033[38;5;136m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\]]\[$(tput sgr0)\]\[\033[0;32m\]\$(parse_git_branch)\[$(tput sgr0)\]\\$ "
  PS2='> '
  PS4='+ '
 }
