@@ -125,11 +125,13 @@ complete -W "$(<~/.ssh/config)" ssh
    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
  }
 
- function proml {
+function proml {
    local       GREEN="\[\033[0;32m\]"
    local       WHITE="\[\033[0;37m\]"
 
- PS1="[\u@\h \w$GREEN\$(parse_git_branch)]$WHITE\$ "
+ PS1="t.e@\H [\[$(tput sgr0)\]\[\033[38;5;136m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\]]\\$\[$(tput sgr0)\] \w$GREEN\$(parse_git_branch)$WHITE\"
+
+ #PS1="[\u@\h \w$GREEN\$(parse_git_branch)]$WHITE\$ "
  PS2='> '
  PS4='+ '
 }
@@ -138,8 +140,6 @@ proml
 
 #clear screen
 #clear
-
-#PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ;}'echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
 
 # autojump with j
 [[ -s ${HOME}/.autojump/etc/profile.d/autojump.sh ]] && source ${HOME}/.autojump/etc/profile.d/autojump.sh
