@@ -27,9 +27,12 @@ fi
 # alias
 alias chrome='google-chrome'
 alias cheat=tldr
+alias rdesktop.xencenter01='rdesktop -u administrator -k sv 10.99.10.12'
 
 # autojump with j
-[[ -s /home/tobias/.autojump/etc/profile.d/autojump.sh ]] && source /home/tobias/.autojump/etc/profile.d/autojump.sh
+[[ -s ${HOME}/.autojump/etc/profile.d/autojump.sh ]] && source ${HOME}/.autojump/etc/profile.d/autojump.sh
 
-
+if test -d ${HOME}/.local/bin ; then
+	export PATH=${HOME}/.local/bin:$PATH
+fi
 
