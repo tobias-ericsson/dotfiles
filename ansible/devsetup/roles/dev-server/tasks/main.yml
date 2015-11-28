@@ -1,9 +1,0 @@
----
-- name: install databases and servers
-  apt: name={{item}} state=present
-  with_items:
-    - elasticsearch
-    - redis-server
-    - mongodb-server
-    - robomongo
-    - nginx

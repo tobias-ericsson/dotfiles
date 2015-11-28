@@ -1,3 +1,0 @@
-sudo apt-get install ngrep 
-sudo apt-get install xbindkeys 
-sudo apt-get install wmctrl  
