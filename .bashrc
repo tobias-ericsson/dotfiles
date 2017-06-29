@@ -143,6 +143,6 @@ proml
 #say hello
 #echo "Hej!"
 
-
-
-
+#for mouse
+xinput --set-prop 9 "Device Accel Constant Deceleration" 2
+xinput --set-prop 9 "Device Accel Velocity Scaling" 8
