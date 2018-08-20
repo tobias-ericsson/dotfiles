@@ -28,6 +28,7 @@ fi
 alias chrome='google-chrome'
 alias cheat=tldr
 alias rdesktop.xencenter01='rdesktop -u administrator -k sv 10.99.10.12'
+alias rdesktop.malmo='rdesktop -u pt/pt-admin-tobias -k sv 10.99.12.32'  
 
 # autojump with j
 [[ -s ${HOME}/.autojump/etc/profile.d/autojump.sh ]] && source ${HOME}/.autojump/etc/profile.d/autojump.sh
