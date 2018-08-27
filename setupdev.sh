@@ -33,10 +33,32 @@ apt "git"
 apt "curl"
 
 ### Fetch Archived Programs
-filepath="https://download.java.net/java/GA/jdk10/10.0.2/19aef61b38124481863b1413dce1855f/13/openjdk-10.0.2_linux-x64_bin.tar.gz"
-haveProgram "java" || downloadProgram "java" $filepath
-filepath="https://dl.bintray.com/groovy/maven/apache-groovy-sdk-2.5.2.zip"
-haveProgram "groovy" || downloadProgram "groovy" $filepath
 
+#### Java
+filepath="https://download.java.net/java/GA/jdk10/10.0.2/19aef61b38124481863b1413dce1855f/13/openjdk-10.0.2_linux-x64_bin.tar.gz"
+haveProgram "java" || downloadProgram "java" ${filepath}
+
+#### Groovy
+filepath="https://dl.bintray.com/groovy/maven/apache-groovy-sdk-2.5.2.zip"
+haveProgram "groovy" || downloadProgram "groovy" ${filepath}
+
+#### Maven
+filepath="http://apache.mirrors.spacedump.net/maven/maven-3/3.5.4/binaries/apache-maven-3.5.4-bin.zip"
+haveProgram "maven" || downloadProgram "maven" ${filepath}
+
+#### Gradle
+filepath="https://services.gradle.org/distributions/gradle-4.9-bin.zip"
+haveProgram "gradle" || downloadProgram "gradle" ${filepath}
+
+#### Idea
+filepath="https://download.jetbrains.com/idea/ideaIC-2018.2.2.tar.gz"
+haveProgram "idea" || downloadProgram "idea" ${filepath}
+
+### Install DEB packages
+
+#### VS Code
+#filepath="https://go.microsoft.com/fwlink/?LinkID=760868"
+filepath="https://az764295.vo.msecnd.net/stable/493869ee8e8a846b0855873886fc79d480d342de/code_1.26.1-1534444688_amd64.deb"
+haveProgram "vscode" || downloadProgram "vscode" ${filepath}
 
 
