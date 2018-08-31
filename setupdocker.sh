@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 
 if ! which "docker"
 then
