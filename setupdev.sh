@@ -44,6 +44,7 @@ apt "wget"
 apt "git"
 apt "curl"
 apt "xz-utils"
+apt "vim"
 
 ### Fetch Archived Programs
 

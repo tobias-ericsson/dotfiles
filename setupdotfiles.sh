@@ -1,8 +1,8 @@
 ######### Variables
  
-dir=~/dev/dotfiles                    # dotfiles directory
+dir=~/dev/me/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files=".bashrc .vimrc .zshrc .npmrc .gitignore"        # list of files/folders to symlink in homedir
+files=".vimrc" #".vimrc .zshrc"        # list of files/folders to symlink in homedir
  
 ##########
  
