@@ -42,6 +42,9 @@ function downloadProgram() {
 ### Install APT packages
 apt "wget"
 apt "git"
+git config --global user.email "t.ericsson@gmail.com"
+git config --global user.name "Tobias Ericsson"
+
 apt "curl"
 apt "xz-utils"
 apt "vim"
