@@ -48,6 +48,7 @@ git config --global user.name "Tobias Ericsson"
 apt "curl"
 apt "xz-utils"
 apt "vim"
+apt "vlc"
 
 ### Fetch Archived Programs
 
