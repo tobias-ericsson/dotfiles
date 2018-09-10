@@ -19,7 +19,7 @@ then
 
 	sudo apt-get update
 
-sudo apt-get -y install docker-ce
+    sudo apt-get -y install docker-ce
 #user=$whoami
 #sudo usermod -aG docker $user
 fi
