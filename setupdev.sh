@@ -57,8 +57,8 @@ apt "autojump"
 ### Install SNAP packages
 
 have "snap" || (sudo snap remove vscode && sudo snap install code --classic)
-have "groovy" || (sudo snap remove groovy && sudo snap install groovy --classic)
-have "go" || (sudo snap install go --classic)
+have "snap" || have "groovy" || (sudo snap remove groovy && sudo snap install groovy --classic)
+have "snap" || have "go" || (sudo snap install go --classic)
 
 ### Fetch Archived Programs
 

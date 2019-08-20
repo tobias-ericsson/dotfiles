@@ -1,3 +1,5 @@
-sudo apt-get install zsh
+sudo apt-get -y install curl zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-chsh -s $(which zsh)
+echo "changing shell with chsh -s $(which zsh)"
+which zsh
+sudo chsh -s $(which zsh)
