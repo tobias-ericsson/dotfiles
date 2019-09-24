@@ -12,6 +12,9 @@ brew install terraform
 brew install yq
 #command line JSON processor
 brew install jq
+#command line fuzzy finder
+brew install fzf
+
 zsh.sh
 docker.sh
 kubernetes.sh
