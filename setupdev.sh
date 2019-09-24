@@ -53,6 +53,9 @@ apt "xz-utils"
 apt "vim"
 apt "vlc"
 apt "autojump"
+apt "tig"
+apt "ripgrep" #rg
+apt "moreutils" #ts ...
 
 ### Install SNAP packages
 
