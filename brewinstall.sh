@@ -18,6 +18,8 @@ packages=(
     kubens
     kube-ps1
     ripgrep
+    npm
+    tldr
 )
 
 function have() {
