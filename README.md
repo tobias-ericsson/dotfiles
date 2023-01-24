@@ -3,4 +3,4 @@ dotfiles
 
 a place to upload, download, and share configuration and setting files
 
-run bootstrap.sh to set up symlinks for dotfiles.
+run setupdotfiles.sh to set up symlinks for dotfiles.

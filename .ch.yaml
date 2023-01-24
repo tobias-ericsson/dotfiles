@@ -1,0 +1,38 @@
+config: "/here/is/config"
+ch: 
+# mvn
+  mvn: 
+    default: mvn --version
+    run: ./mvnw -Dmaven.test.skip -DskipTests spring-boot:run -Dspring-boot.run.profiles=local
+# Docker
+  docker:
+    default: open /Applications/Docker.app
+    start: open /Applications/Docker.app
+    stop: osascript -e 'quit app "Docker Desktop"'
+# Redis
+  redis: 
+    default: redis-cli --version
+    start: brew services start redis
+    test: redis-cli --version
+    stop: brew services stop redis
+# Postgresql
+  postgres:
+    default: psql --version
+    start: brew services start postgresql@14
+    init: ~/dev/sandvik/tobias-ericsson/psql/init.sql.sh
+    test: psql --version
+    stop: brew services stop postgresql@14
+# Keycloak
+  keycloak:
+    default: docker run -p 9800:8080 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin quay.io/keycloak/keycloak:latest start-dev
+    start: docker ps
+    init: docker ps
+    test: docker ps
+    stop: docker stop
+# All databases   
+  db: 
+    default: psql --version; redis-cli --version;
+    start: ch redis start; ch postgres start;
+    test: ch redis test; ch postgres test;
+    stop: ch redis stop; ch postgres stop;
+  
