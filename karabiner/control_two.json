@@ -1,0 +1,33 @@
+{
+  "title": "Control+2=@",
+  "rules": [
+    {
+      "description": "Control+2=@",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "2",
+            "modifiers": {
+              "mandatory": [
+                "control"
+              ],
+              "optional": [
+                "caps_lock",
+                "option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "2",
+              "modifiers": [
+                "option"
+            ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
