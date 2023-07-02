@@ -1,8 +1,8 @@
 {
-  "title": "Swedish/Devloper toggle §",
+  "title": "Swedish/Developer toggle § (backslash)",
   "rules": [
     {
-      "description": "Swedish/Developer toggle §",
+      "description": "Swedish/Developer toggle § (backslash)",
       "manipulators": [
         {
           "conditions": [
@@ -13,7 +13,7 @@
             }
           ],
           "from": {
-            "key_code": "grave_accent_and_tilde",
+            "key_code": "non_us_backslash",
             "modifiers": {
               "optional": ["any"]
             }
@@ -24,7 +24,7 @@
           },
           "to_if_held_down": [
             {
-              "key_code": "grave_accent_and_tilde"
+              "key_code": "non_us_backslash"
             }
           ],
           "to_if_alone": [
@@ -46,14 +46,14 @@
             }
           ],
           "from": {
-            "key_code": "grave_accent_and_tilde",
+            "key_code": "non_us_backslash",
             "modifiers": {
               "optional": ["any"]
             }
           },
           "to_if_held_down": [
             {
-              "key_code": "grave_accent_and_tilde"
+              "key_code": "non_us_backslash"
             }
           ],
           "parameters": {
