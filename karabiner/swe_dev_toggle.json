@@ -1,0 +1,106 @@
+{
+  "title": "Swedish/Devloper toggle §",
+  "rules": [
+    {
+      "description": "Swedish/Devloper toggle §",
+      "manipulators": [
+        {
+          "conditions": [
+            {
+              "name": "swe_dev_toggle",
+              "type": "variable_unless",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "grave_accent_and_tilde",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "swe_dev_toggle",
+                "value": 1
+              }
+            }
+          ],
+          "type": "basic"
+        },
+        {
+          "conditions": [
+            {
+              "name": "swe_dev_toggle",
+              "type": "variable_if",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "grave_accent_and_tilde",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "swe_dev_toggle",
+                "value": 0
+              }
+            },
+            {
+              "select_input_source": {
+                "language": "sv",
+                "input_source_id": "com.apple.keylayout.Swedish-Pro"
+              }
+            }
+          ],
+          "type": "basic"
+        },
+        {
+          "conditions": [
+            {
+              "name": "swe_dev_toggle",
+              "type": "variable_if",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "t",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_arrow"
+            }
+          ],
+          "type": "basic"
+        },
+        {
+          "conditions": [
+            {
+              "name": "swe_dev_toggle",
+              "type": "variable_if",
+              "value": 0
+            }
+          ],
+          "from": {
+            "key_code": "t",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "right_arrow"
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    }
+  ]
+}

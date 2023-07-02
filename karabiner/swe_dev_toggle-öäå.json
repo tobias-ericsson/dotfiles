@@ -1,0 +1,188 @@
+{
+  "title": "Swedish/Devloper toggle § modifies ÖÄÅ",
+  "rules": [
+    {
+      "description": "å=|, Å=@",
+      "manipulators": [
+        {
+          "conditions": [
+            {
+              "name": "swe_dev_toggle",
+              "type": "variable_if",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "open_bracket"
+          },
+          "to": [
+            {
+              "key_code": "7",
+              "modifiers": ["option"]
+            }
+          ],
+          "type": "basic"
+        },
+        {
+          "conditions": [
+            {
+              "name": "swe_dev_toggle",
+              "type": "variable_if",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "open_bracket",
+            "modifiers": {
+              "mandatory": ["shift"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "2",
+              "modifiers": ["option"]
+            }
+          ],
+          "type": "basic"
+        },
+        {
+          "from": {
+            "key_code": "open_bracket",
+            "modifiers": {
+              "mandatory": ["control"],
+              "optional": ["caps_lock", "option"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "open_bracket"
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    },
+    {
+      "description": "ö={, Ö=[",
+      "manipulators": [
+        {
+          "conditions": [
+            {
+              "name": "swe_dev_toggle",
+              "type": "variable_if",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "semicolon"
+          },
+          "to": [
+            {
+              "key_code": "8",
+              "modifiers": ["option", "shift"]
+            }
+          ],
+          "type": "basic"
+        },
+        {
+          "conditions": [
+            {
+              "name": "swe_dev_toggle",
+              "type": "variable_if",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "semicolon",
+            "modifiers": {
+              "mandatory": ["shift"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "8",
+              "modifiers": ["option"]
+            }
+          ],
+          "type": "basic"
+        },
+        {
+          "from": {
+            "key_code": "semicolon",
+            "modifiers": {
+              "mandatory": ["control"],
+              "optional": ["caps_lock", "option"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "semicolon"
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    },
+    {
+      "description": "ä=}, Ä=]",
+      "manipulators": [
+        {
+          "conditions": [
+            {
+              "name": "swe_dev_toggle",
+              "type": "variable_if",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "quote"
+          },
+          "to": [
+            {
+              "key_code": "9",
+              "modifiers": ["option", "shift"]
+            }
+          ],
+          "type": "basic"
+        },
+        {
+          "conditions": [
+            {
+              "name": "swe_dev_toggle",
+              "type": "variable_if",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "quote",
+            "modifiers": {
+              "mandatory": ["shift"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "9",
+              "modifiers": ["option"]
+            }
+          ],
+          "type": "basic"
+        },
+        {
+          "from": {
+            "key_code": "quote",
+            "modifiers": {
+              "mandatory": ["control"],
+              "optional": ["caps_lock", "option"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "quote"
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    }
+  ]
+}
