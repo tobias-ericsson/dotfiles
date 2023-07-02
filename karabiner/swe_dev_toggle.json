@@ -57,48 +57,6 @@
             }
           ],
           "type": "basic"
-        },
-        {
-          "conditions": [
-            {
-              "name": "swe_dev_toggle",
-              "type": "variable_if",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "t",
-            "modifiers": {
-              "optional": ["any"]
-            }
-          },
-          "to": [
-            {
-              "key_code": "left_arrow"
-            }
-          ],
-          "type": "basic"
-        },
-        {
-          "conditions": [
-            {
-              "name": "swe_dev_toggle",
-              "type": "variable_if",
-              "value": 0
-            }
-          ],
-          "from": {
-            "key_code": "t",
-            "modifiers": {
-              "optional": ["any"]
-            }
-          },
-          "to": [
-            {
-              "key_code": "right_arrow"
-            }
-          ],
-          "type": "basic"
         }
       ]
     }
