@@ -3,7 +3,7 @@
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 echo "> ln -s ${SCRIPT_DIR} ~/.config/karabiner/assets/complex_modifications"
-rm ~/.config/karabiner/assets/complex_modifications
+rmdir ~/.config/karabiner/assets/complex_modifications
 ln -s ${SCRIPT_DIR} ~/.config/karabiner/assets/complex_modifications
 
 exit 0
