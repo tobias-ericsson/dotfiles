@@ -35,4 +35,5 @@ ch:
     start: ch redis start; ch postgres start;
     test: ch redis test; ch postgres test;
     stop: ch redis stop; ch postgres stop;
-  
+  time:
+    default: date
