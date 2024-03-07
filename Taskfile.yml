@@ -32,8 +32,9 @@ tasks:
       - source ~/.zshrc
 
   git:setup:
-    deps: [brew:install]
+    #deps: [brew:install]
     status:
+      - test -d ~/dev/me/unified-help
     cmds:
       - ./git/gitrepos.sh
 
@@ -48,4 +49,12 @@ tasks:
       - git add --all
       - git commit -m "config"
       - git push
+
+  all:
+    cmds:
+      - task: dotfiles:setup
+      - task: karabiner:setup
+      - task: zsh:setup
+      - task: git:setup
+      - task: git:push
 
