@@ -1,6 +1,8 @@
 dotfiles
 ========
 
-a place to upload, download, and share configuration and setting files
+A place to upload, download, and share configuration and setting files.
 
-run setupdotfiles.sh to set up symlinks for dotfiles.
+Run `task all` to set up symlinks for dotfiles.
+
+Run `task --list-all` for more options.
