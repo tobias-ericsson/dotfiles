@@ -1,0 +1,23 @@
+version: '3'
+
+tasks:
+  brew:install:
+    cmds:
+      - ./brew-install.sh
+
+  karabiner:setup:
+    status:
+      # check if symlink exists
+      - test -L ~/.config/karabiner/assets/complex_modifications 
+    cmds:
+      - ./karabiner/setup.sh    
+
+  zsh:setup:
+    deps: [brew:install]
+    status:
+      # check if .zshrc is symlink 
+      - test -L ~/.zshrc
+    cmds:
+      - rm ~/.zshrc
+      - ln -s ~/dev/me/dotfiles/zsh/zshrc ~/.zshrc
+      - source ~/.zshrc

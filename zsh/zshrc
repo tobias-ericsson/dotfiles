@@ -1,0 +1,5 @@
+ZSH_CUSTOM=$HOME/dev/me/dotfiles/zsh/custom
+
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
