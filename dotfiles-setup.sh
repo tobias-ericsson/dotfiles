@@ -4,7 +4,7 @@
  
 dir=~/dev/me/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files=".vimrc .uh.yaml .ch.yaml .zshrc"        # list of files/folders to symlink in homedir
+files=".vimrc .uh.yaml .ch.yaml .gitconfig"        # list of files/folders to symlink in homedir
  
 ##########
  

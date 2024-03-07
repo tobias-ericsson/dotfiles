@@ -1,9 +1,18 @@
 version: '3'
 
 tasks:
+  dotfiles:setup:
+    status:
+      - test -L ~/.gitconfig
+      - test -L ~/.uh.yaml
+      - test -L ~/.vimrc
+
+    cmds:
+      - ./dotfiles-setup.sh
+
   brew:install:
     cmds:
-      - ./brew-install.sh
+      - ./brew/brew-install.sh
 
   karabiner:setup:
     status:
@@ -21,3 +30,22 @@ tasks:
       - rm ~/.zshrc
       - ln -s ~/dev/me/dotfiles/zsh/zshrc ~/.zshrc
       - source ~/.zshrc
+
+  git:setup:
+    deps: [brew:install]
+    status:
+    cmds:
+      - ./git/gitrepos.sh
+
+  git:push:
+    preconditions:
+      # test existence of modified files, grep will exit with a failure if there is no match
+      - sh: git ls-files -m -o | grep -E '.'
+        msg: "nothing to do, no modified files"
+    #status:
+    #  - git status
+    cmds:
+      - git add --all
+      - git commit -m "config"
+      - git push
+
