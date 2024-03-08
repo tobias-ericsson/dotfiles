@@ -1,5 +1,5 @@
 PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
-PATH="~/go/bin:$PATH"
+PATH="$HOME/go/bin:$PATH"
 
 
 # set PATH so it includes user's private bin if it exists
