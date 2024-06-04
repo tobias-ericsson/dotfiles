@@ -1,6 +1,6 @@
 PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 PATH="$HOME/go/bin:$PATH"
-
+PATH="/Applications/IntelliJ IDEA CE.app/Contents/MacOS:$PATH"
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "\$HOME/bin" ] ; then
