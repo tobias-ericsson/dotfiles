@@ -1,0 +1,32 @@
+{
+  "title": "Tilde",
+  "rules": [
+    {
+      "description": "Tilde",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "close_bracket",
+            "modifiers": {
+              "mandatory": [
+              ],
+              "optional": [
+                "caps_lock",
+                "option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "close_bracket",
+              "modifiers": [
+                "option"
+            ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

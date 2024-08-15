@@ -30,6 +30,7 @@ packages=(
     npm
     tldr
     youtube-dl
+    direnv
 #databases   
     redis
     postgresql
