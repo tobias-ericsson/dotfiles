@@ -1,6 +1,9 @@
 version: '3'
 
 tasks:
+  default:
+    cmds:
+      - task --list-all
   dotfiles:setup:
     status:
       - test -L ~/.gitconfig
