@@ -23,9 +23,9 @@ tasks:
 
   zsh:setup:
     deps: [brew:install]
-    status:
+      #status:
       # check if .zshrc is symlink 
-      - test -L ~/.zshrc
+      #- test -L ~/.zshrc
     cmds:
       - rm ~/.zshrc
       - ln -s ~/dev/me/dotfiles/zsh/zshrc ~/.zshrc
