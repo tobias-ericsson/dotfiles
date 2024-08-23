@@ -4,14 +4,14 @@ tasks:
   default:
     cmds:
       - task --list-all
-  dotfiles:setup:
+  dotfiles:symlink:
     status:
       - test -L ~/.gitconfig
       - test -L ~/.uh.yaml
       - test -L ~/.vimrc
 
     cmds:
-      - ./dotfiles-setup.sh
+      - ./dotfiles-symlink.sh
 
   brew:install:
     cmds:
@@ -56,7 +56,7 @@ tasks:
 
   all:
     cmds:
-      - task: dotfiles:setup
+      - task: dotfiles:symlink
       - task: karabiner:setup
       - task: zsh:setup
       - task: git:setup
