@@ -31,6 +31,7 @@ packages=(
     tldr
     youtube-dl
     direnv
+    thefuck
 #databases   
     redis
     postgresql
