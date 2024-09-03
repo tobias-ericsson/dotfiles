@@ -5,4 +5,6 @@ if [ -d "$HOME/bin" ] ; then
   PATH="$HOME/me/bin:$PATH"
 fi
 
+PATH="/Applications/IntelliJ IDEA.app/Contents/MacOS":$PATH
+
 export PATH
