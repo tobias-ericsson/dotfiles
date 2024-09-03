@@ -10,6 +10,7 @@ packages=(
     gh
     go-task
     vim
+    zellij
     vlc
 #replace ls    
     eza
