@@ -1,6 +1,7 @@
 
 
-
+alias python="python3"
+alias pip="pip3"
 alias kgp="kubectl get pods"
 alias k="kubectl"
 alias cat="bat -pp"
