@@ -9,3 +9,9 @@
 [user]
 	email = tobias.ericsson@neo4j.com
 	name = Tobias Ericsson
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[url "git@github.com:neo-technology/neo4j-cloud.git"]
+	insteadOf = https://github.com/neo-technology/neo4j-cloud
+[credential]
+	helper = osxkeychain
