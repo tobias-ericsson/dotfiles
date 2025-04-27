@@ -6,6 +6,7 @@
 	rebase = true
 [core]
 	autocrlf = input
+	excludesfile = /Users/tobias/.gitignore
 [user]
 	email = tobias.ericsson@neo4j.com
 	name = Tobias Ericsson
@@ -15,3 +16,10 @@
 	insteadOf = https://github.com/neo-technology/neo4j-cloud
 [credential]
 	helper = osxkeychain
+[alias]
+    lol = log --oneline --decorate
+    graph = log --oneline --graph --decorate
+[merge]
+	tool = p4merge
+[grep]
+    lineNumber = true
