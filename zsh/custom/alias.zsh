@@ -9,3 +9,4 @@ alias ls="eza -la"
 alias l="eza -l --no-permissions --no-user --no-time -ssize"
 alias fzfp="fzf --preview 'bat --color always {}'"
 alias ak="goak"
+alias func="print -l ${(ok)functions[(I)[^_]*]}" #functions

@@ -6,5 +6,8 @@ if [ -d "$HOME/bin" ] ; then
 fi
 
 PATH="/Applications/IntelliJ IDEA.app/Contents/MacOS":$PATH
+PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"
+
+PATH="/Users/tobias/program/pact/bin:$PATH"
 
 export PATH
