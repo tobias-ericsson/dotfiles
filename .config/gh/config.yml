@@ -1,0 +1,26 @@
+# The current version of the config schema
+version: 1
+# What protocol to use when performing git operations. Supported values: ssh, https
+git_protocol: https
+# What editor gh should run when creating issues, pull requests, etc. If blank, will refer to environment.
+editor:
+# When to interactively prompt. This is a global config that cannot be overridden by hostname. Supported values: enabled, disabled
+prompt: enabled
+# Preference for editor-based interactive prompting. This is a global config that cannot be overridden by hostname. Supported values: enabled, disabled
+prefer_editor_prompt: disabled
+# A pager program to send command output to, e.g. "less". If blank, will refer to environment. Set the value to "cat" to disable the pager.
+pager:
+# Aliases allow you to create nicknames for gh commands
+aliases:
+    co: pr checkout
+    env-create: workflow $1 releaseops-devreleaseops-environment-create.yaml
+    env-destroy: workflow $1 releaseops-devreleaseops-environment-destroy.yaml
+    rnr-start: workflow $1 releaseops-devreleaseops-rnr-test-start.yaml
+    rnr-result: '!open https://live.neo4j-build.io/buildConfiguration/CloudRoot_Neo4jCloud_Neo4jPreDropTestBuilds_RnRTestsAnalyzeResultsDevreleaseops'
+    rnr-stop: workflow $1 releaseops-devreleaseops-rnr-test-stop.yaml
+    aura-weekly: '!open https://live.neo4j-build.io/buildConfiguration/CloudRoot_Neo4jCloud_Neo4jPreDropTestBuilds_AuraBsp_AuraWeekly?buildTypeTab=&mode=branches'
+    env-create-view: '!gh workflow view releaseops-devreleaseops-environment-create.yaml --web'
+# The path to a unix socket through which send HTTP connections. If blank, HTTP traffic will be handled by net/http.DefaultTransport.
+http_unix_socket:
+# What web browser gh should use when opening URLs. If blank, will refer to environment.
+browser:
