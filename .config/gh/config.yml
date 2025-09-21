@@ -13,8 +13,11 @@ pager:
 # Aliases allow you to create nicknames for gh commands
 aliases:
     co: pr checkout
+    deep: models run deepseek/deepseek-v3-0324 $1
+    gpt: models run openai/gpt-4o-mini --top-p 0.8 $1
+    grok: models run xai/grok-3-mini --top-p 0.8 $1
     env-create: workflow $1 releaseops-devreleaseops-environment-create.yaml
-    env-destroy: workflow $1 releaseops-devreleaseops-environment-destroy.yaml
+    env-delete: workflow $1 releaseops-devreleaseops-environment-delete.yaml
     rnr-start: workflow $1 releaseops-devreleaseops-rnr-test-start.yaml
     rnr-result: '!open https://live.neo4j-build.io/buildConfiguration/CloudRoot_Neo4jCloud_Neo4jPreDropTestBuilds_RnRTestsAnalyzeResultsDevreleaseops'
     rnr-stop: workflow $1 releaseops-devreleaseops-rnr-test-stop.yaml
