@@ -2,6 +2,9 @@
 
 #Packages to install
 packages=(
+    eza
+    bat
+    direnv
     curl
     wget
     git

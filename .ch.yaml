@@ -45,3 +45,8 @@ ch:
     default: ipconfig getifaddr en0; curl -s ipecho.net/plain;
   system:
     default: uname -mn; system_profiler SPHardwareDataType;
+  get:
+    default: curl http://localhost:9817/webjars/swagger-ui/index.html#/Able%20Neo4j%20Graph/getUsers
+    #    user: curl -X 'GET' 'http://localhost:9817/api/v2/graph/user' -H 'accept: */*' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJYOFVEWlpBMU5qUUdzUUVhZmRscEVybHlkc3FKWjQ3QWNDLUxwbE1IY0NnIn0.eyJleHAiOjE2OTIwMDMzMjksImlhdCI6MTY5MjAwMjQyOSwiYXV0aF90aW1lIjoxNjkyMDAyNDI5LCJqdGkiOiJmZGY3MTNlOS05NGFlLTQ5MWYtODM5NS1kZWEzNDY4NjVkNTAiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0Ojk4MDAvYXV0aC9yZWFsbXMvc2FtLTdjODgwNTA2NTJmOCIsInN1YiI6ImIzZmQxNjc5LTI2MjQtNDAzZC05NWI0LTk0MTNiYjM0NWUwNyIsInR5cCI6IkJlYXJlciIsImF6cCI6InN3YWdnZXItdWkiLCJzZXNzaW9uX3N0YXRlIjoiNWQwNThlN2UtYzNkOC00YjkwLWJhMjYtZDkxMjA1ZDk0YWQ0IiwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiIiwic2lkIjoiNWQwNThlN2UtYzNkOC00YjkwLWJhMjYtZDkxMjA1ZDk0YWQ0In0.HE9Bm72FN09mdOKFY0AeXZISnEUa111JwdOqqQpK7PsY30386nFEdVpqmnhtNrQud2H6jT5rMhZDMo3TJ-fXZ3Q6cCvQcnbNftNnPJDy6Y5hd0MjREL5hQo20N23iQEpe9WXv44eP9Nzdegpt4g9ASzu-XouTEuupB86rn4H7URAkHW_JtxA4mKt_wZlvO3ILVFsmy9Sgio2ilQLWEWuiZKuEY6zjfQRdOUAva6-hY0Rnd7nP0yqcX5FovHLoZUcYsV8NM7oFBRhl-cYxLeXuOz7zNn804L3MI5C2tij4sSfveKxJ_A-hb3eqm7pWc3QkvKFCtg6HGyIWHeQpzVdWQ'
+    test: http://localhost:9817/webjars/swagger-ui/index.html#/Able%20Neo4j%20Graph/getUsers
+
