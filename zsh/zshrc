@@ -57,3 +57,6 @@ export SDKMAN_DIR="$HOME/.sdkman"
 # zprof
 
 test -e /Users/tobias/.iterm2_shell_integration.zsh && source /Users/tobias/.iterm2_shell_integration.zsh || true
+
+# opencode
+export PATH=/Users/tobias/.opencode/bin:$PATH
