@@ -53,10 +53,5 @@ export PATH="$PATH:/Users/tobias/.lmstudio/bin"
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-# uncomment to profile startup time
-# zprof
-
-test -e /Users/tobias/.iterm2_shell_integration.zsh && source /Users/tobias/.iterm2_shell_integration.zsh || true
-
 # opencode
 export PATH=/Users/tobias/.opencode/bin:$PATH
