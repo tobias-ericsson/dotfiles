@@ -42,17 +42,19 @@ KUBE_PS1_CLUSTER_FUNCTION=_kube_ctx_short
 
 ZSH_THEME_GIT_PROMPT_PREFIX=" %F{cyan}("
 ZSH_THEME_GIT_PROMPT_SUFFIX=")%f"
-ZSH_THEME_GIT_PROMPT_DIRTY="*"
+ZSH_THEME_GIT_PROMPT_DIRTY="%F{214}*%F{cyan}"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 _prompt_user_host() {
-  [[ -n "$SSH_CONNECTION" ]] && echo "%n@%m "
+  [[ -n "$SSH_CONNECTION" ]] && echo "%F{magenta}%n@%m%f "
 }
 
 setopt PROMPT_SUBST
-PROMPT='$(kube_ps1)$(_prompt_user_host)$(git_prompt_info) %2~ ❯ '
+PROMPT='$(kube_ps1)$(_prompt_user_host)$(git_prompt_info) %F{220}%B%2~%b%f %(?.%F{82}❯%f.%F{196}❯%f) '
 
 source <(fzf --zsh)
 eval $(thefuck --alias)
 
 export PATH="$HOME/.local/bin:$PATH"
+
+MAILCHECK=0
