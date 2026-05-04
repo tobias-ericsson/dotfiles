@@ -14,4 +14,10 @@ PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"
 
 PATH="/Users/tobias/program/pact/bin:$PATH"
 
+# brew install coreutils findutils gnu-sed
+# GNU coreutils before BSD tools (for neo4j-cloud build system)
+export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
+export PATH="/opt/homebrew/opt/findutils/libexec/gnubin:$PATH"
+export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
+
 export PATH

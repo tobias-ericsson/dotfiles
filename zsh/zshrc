@@ -58,3 +58,8 @@ eval $(thefuck --alias)
 export PATH="$HOME/.local/bin:$PATH"
 
 MAILCHECK=0
+
+if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
+
+# Added by Antigravity
+export PATH="/Users/tobias/.antigravity/antigravity/bin:$PATH"

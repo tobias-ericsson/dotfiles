@@ -1,0 +1,24 @@
+{
+"title": "Mouse button4=mission_control",
+"rules": [
+        {
+    "description": "Mouse button4=mission_control",
+    "manipulators": [
+        {
+            "from": {
+                "pointing_button": "button_4",
+                "modifiers": {
+                    "optional": ["any"]
+                }
+            },
+            "to": [
+                {
+                    "apple_vendor_keyboard_key_code": "mission_control",
+                    "modifiers": ["left_command"]
+                }
+            ],
+            "type": "basic"
+        }
+    ]
+}]
+}
