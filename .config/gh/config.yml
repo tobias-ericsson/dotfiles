@@ -23,6 +23,7 @@ aliases:
     rnr-stop: workflow $1 releaseops-devreleaseops-rnr-test-stop.yaml
     aura-weekly: '!open https://live.neo4j-build.io/buildConfiguration/CloudRoot_Neo4jCloud_Neo4jPreDropTestBuilds_AuraBsp_AuraWeekly?buildTypeTab=&mode=branches'
     env-create-view: '!gh workflow view releaseops-devreleaseops-environment-create.yaml --web'
+    user: '!gh-user "$@"'
 # The path to a unix socket through which send HTTP connections. If blank, HTTP traffic will be handled by net/http.DefaultTransport.
 http_unix_socket:
 # What web browser gh should use when opening URLs. If blank, will refer to environment.
